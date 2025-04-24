@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://fonts.googleapis.com/css?family=Noto+Sans:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+      rel="stylesheet"
+    />
+    <style>
+      * {
+        box-sizing: border-box;
+        /* border: 1px solid #000; */
+      }
+
+      html {
+        font-family: 'Noto sans';
+        color: #234;
+        font-size: 18px;
+      }
+
+      input,
+      button {
+        font-family: 'Noto sans';
+        color: #234;
+        font-size: 16px;
+      }
+
+      ul {
+        width: 400px;
+      }
+      li {
+        /* line-height: 33px; */
+        border: 1px solid #ccc;
+        padding: 5px;
+        border-radius: 10px;
+        /* overflow: hidden; */
+        transition: 1s;
+      }
+      span {
+        display: inline-block;
+        width: 50%;
+      }
+
+      .remove-vegetable {
+        background: crimson;
+        clear: white;
+        margin-left: 5px;
+      }
+
+      button {
+        cursor: pointer;
+      }
+      /* li:hover {
+        transform: translateY(100%);
+      } */
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Овощи</h1>
+      <input id="elInputVegetable" />
+      <button id="elAddVegetable">Добавить овощ</button>
+      <ul class="vegetables">
+        <!-- <li class="vegetable">
+          <span>ccccc</span>
+          <button>📝</button>
+          <button class="remove-vegetable">X</button>
+          <button>🔼</button>
+          <button>🔽</button>
+        </li> -->
+      </ul>
+    </div>
+    <script src="view.js"></script>
+    <script src="model.js"></script>
+  </body>
+</html>
