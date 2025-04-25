@@ -68,11 +68,3 @@ function moveRight(vegetable) {
   }
 }
 
-addVegetable('tomato')
-addVegetable('cucumber')
-vegetables
-
-
-moveRight('tomato')
-vegetables
-renderUlVegetables(vegetables)

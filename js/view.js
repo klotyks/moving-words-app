@@ -1,10 +1,9 @@
 function onClickButtonAddVegetable() {
   const elInput = document.querySelector('input')
   const vegetable = elInput.value
+  handleAddWord(vegetable)
   elInput.value = ''
   elInput.focus()
-  addVegetable(vegetable)
-  renderUlVegetables(vegetables)
 }
 
 function onClickButtonButtonChange(e) {
@@ -21,23 +20,19 @@ function onClickButtonButtonChange(e) {
 function onClickButtonRemoveVegetable(e) {
   const elLi = e.target.closest('li')
   elSpan = elLi.querySelector('span')
-  removeVegetable(elSpan.textContent)
-  renderUlVegetables(vegetables)
+  handleRemoveWord(elSpan)
 }
 
 function onClcikButtonChangePositionUp (e) {
   const elLi = e.target.closest('li')
   elSpan = elLi.querySelector('span')
-  moveLeft(elSpan.textContent)
-  renderUlVegetables(vegetables)
+  handleMoveWordUp(elSpan)
  
 }
 function onClcikButtonChangePositionDown (e) {
   const elLi = e.target.closest('li')
   elSpan = elLi.querySelector('span')
-  moveRight(elSpan.textContent)
-  // console.log(moveRight('cucumber'))
-  renderUlVegetables(vegetables)
+  handleMoveWordDown(elSpan)
 }
 
 function renderUlVegetables(vegetables) {
