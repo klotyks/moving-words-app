@@ -4,7 +4,6 @@ const vegetables = []
 function addVegetable(vegetable) {
   if (vegetable.text === '') return
   vegetables.push(vegetable)
-
 }
 
 function hasVegetableByText(vegetableText) {
@@ -50,7 +49,7 @@ function removeVegetable(vegetable) {
 
 function updateVegetable(newVegetable) {
   const vegetable = getEditableVegetable()
-  if(vegetable){
+  if (vegetable) {
     vegetable.text = newVegetable
     vegetable.isEditable = false
   }
@@ -66,6 +65,9 @@ function toggleVegetableByText(vegetableText, isEdit) {
   const vegetable = getVegetableByText(vegetableText)
   vegetable.isEditable = isEdit
 }
+
+// vegetable: string
+// vegetables: array of objects
 
 function moveLeft(vegetable) {
   if (vegetables.includes(vegetable)) {
@@ -98,7 +100,11 @@ function moveRight(vegetable) {
     console.log('ваше слово отсутствует')
   }
 }
+
 // vegetables
 // addVegetableByText('apple')
 // vegetables
- 
+// addVegetableByText('apple2')
+// vegetables
+// moveLeft('apple2')
+// vegetables
