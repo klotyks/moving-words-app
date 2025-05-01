@@ -6,33 +6,27 @@ function onClickButtonAddVegetable() {
   elInput.focus()
 }
 
-function onClickButtonButtonChange(e) {
-  const elLi = e.target.closest('li')
-  const elSpan = elLi.querySelector('span')
-  const asking = elSpan.textContent
-  const answer = prompt(asking)
-  if (answer === null) return
-  if (answer === '') return
-  updateVegetable(asking, answer)
-  renderUlVegetables(vegetables)
+function onClickButtonButtonChange(vegetable) {
+  console.log('h1')
+  updateVegetable(vegetable)
 }
 
 function onClickButtonRemoveVegetable(e) {
   const elLi = e.target.closest('li')
-  elSpan = elLi.querySelector('span')
-  handleRemoveWord(elSpan)
+  const elSpan = elLi.querySelector('span')
+  handleRemoveWord(elSpan.textContent)
 }
 
 function onClcikButtonChangePositionUp (e) {
   const elLi = e.target.closest('li')
-  elSpan = elLi.querySelector('span')
-  handleMoveWordUp(elSpan)
+  const elSpan = elLi.querySelector('span')
+  handleMoveWordUp(elSpan.textContent)
  
 }
 function onClcikButtonChangePositionDown (e) {
   const elLi = e.target.closest('li')
-  elSpan = elLi.querySelector('span')
-  handleMoveWordDown(elSpan)
+  const elSpan = elLi.querySelector('span')
+  handleMoveWordDown(elSpan.textContent)
 }
 
 function renderUlVegetables(vegetables) {
@@ -45,8 +39,6 @@ function renderUlVegetables(vegetables) {
 }
 
 
-
-
 function generateLiVegetable(vegetable) {
   const elLi = document.createElement('li')
   const elSpan = document.createElement('span')
@@ -54,9 +46,19 @@ function generateLiVegetable(vegetable) {
   const elButtonChange = generateButtonChangeV()
   const elButtonChanngePositionUp = generateButtonUp()
   const elButtonChanngePositionDown = generateButtonDown()
-  elLi.classList.add('vegetable')
+  const elInputText = generateInputText()
+
   elSpan.textContent = vegetable
-  elLi.appendChild(elSpan)
+  elLi.classList.add('vegetable')
+  elSpan.textContent = vegetable.text
+  elInputText.value = vegetable
+
+  if (vegetable.isEditable) {
+    elLi.appendChild(elInputText)
+  } else {
+    elLi.appendChild(elSpan)
+  }
+
   elLi.appendChild(elButtonChange)
   elLi.appendChild(elButtonRemove)
   elLi.appendChild(elButtonChanngePositionUp)
@@ -94,8 +96,15 @@ function generateButtonDown () {
   
 }
 
-// добавить возможность удалять овощ
+
+function generateInputText () {
+  const elInputText = document.createElement('input')
+  elInputText.setAttribute('type','text')
+  return elInputText
+}
+
+
 
 document.querySelector('button').onclick = onClickButtonAddVegetable
 
-// renderUlVegetables(vegetables)
+

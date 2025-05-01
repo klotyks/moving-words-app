@@ -4,16 +4,16 @@ function handleAddWord (vegetable) {
 }
 
 function handleRemoveWord (elSpan) {
-  removeVegetable(elSpan.textContent)
+  removeVegetable(elSpan)
   renderUlVegetables(vegetables)
 }
 
 function handleMoveWordUp (elSpan) {
-  moveLeft(elSpan.textContent)
+  moveLeft(elSpan)
   renderUlVegetables(vegetables)
 }
 
 function handleMoveWordDown (elSpan) {
-  moveLeft(elSpan.textContent)
+  moveLeft(elSpan)
   renderUlVegetables(vegetables)
 }
